@@ -5,6 +5,6 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @user = current_user
+    @boardgames = Boardgame.where(user_id == current_user.id)
   end
 end
