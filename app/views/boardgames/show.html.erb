@@ -7,7 +7,16 @@
 <li><p><%= @boardgame.description %></p></li>
 <li><p><%= @boardgame.price %></p></li>
 </div>
+<div class = d-flex> 
+<div class = box>
+</div> 
+</div>
 </ul>
+<p>contact info </p>
+<div class = "card" >
+  <%= @user.first_name %><%= @user.last_name %>
+</div>
+
 <div class="map-container col-5">MAP</div>
 <br>
 <%= link_to "Back to the Boardgames List", boardgames_path %>
