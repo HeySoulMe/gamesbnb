@@ -3,9 +3,7 @@
 <h1><%= @boardgame.name  %></h1>
 <div class="product d-flex">
   <div class="picture col-4">
-    <% if @boardgame.photos.attached? %>
-      <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
-    <% end %>
+    <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
   </div>
   <div class="item col-4">
     <h3>Description</h3>
@@ -14,7 +12,15 @@
     <h4>Owner info</h4>
     <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
   </div>
+  <div class="checkin col-4">
+    <%= simple_form_for [@booking] do |f| %>
+      <%= f.input :start_at %>
+      <%= f.input :end_at %>
+      <%= f.submit %>
+      <% end %>
+  </div>
 </div>
+
 
 <p class="players-show"><%= @boardgame.players %> <i class="fas fa-user-friends"></i></p>
 
