@@ -1,6 +1,10 @@
 class BoardgamesController < ApplicationController
   def index
-    @boardgames = Boardgame.all
+    @boardgames = policy_scope(Boardgame)
+  end
+
+  def show
+    @boardgame = Boardgame.find(params[:id])
   end
 
   def new

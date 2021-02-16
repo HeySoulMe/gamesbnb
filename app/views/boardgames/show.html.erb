@@ -1,0 +1,10 @@
+<h1><%= @boardgame.name  %></h1>
+<ul>
+<% if @boardgame.photo.attached? %>
+<%= cl_image_tag @boardgame.photo.key, width:100 , height:150, crop: :fill %>
+<% end %>
+<li><p><%= @boardgame.description %></p></li>
+<li><p><%= @boardgame.price %></p></li>
+</ul>
+<br>
+<%= link_to "Back to the Boardgames List", boardgames_path %>
