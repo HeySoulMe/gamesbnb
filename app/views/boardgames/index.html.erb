@@ -8,7 +8,9 @@
 			<div class="cards">
 				<% @boardgames.each do |boardgame| %>
 					<div class="card d-flex">
-						<div class="img" style="width: 180px, height: 180px">IMG</div>
+						<% if boardgame.photo.attached? %>
+						  <%= cl_image_tag boardgame.photo.key, height: 300, width: 400, crop: :fill%>
+						<% end %>
 						<div class="description text-center">
 							<h4><%= boardgame.name %></h4>
 							<hr>
