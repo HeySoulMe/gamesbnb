@@ -5,11 +5,11 @@ class BoardgamesController < ApplicationController
 
   def new
     @boardgame = Boardgame.new
+    authorize @boardgame
   end
 
   def create
     @boardgame = Boardgame.new(boardgame_params)
-    @boardgame.save
     if @boardgame.save
       redirect_to boardgame_path(@boardgame)
     else
