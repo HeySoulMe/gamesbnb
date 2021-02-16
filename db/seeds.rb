@@ -300,7 +300,7 @@ Booking.create!(
   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
   end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
   user: User.find(1),
-  boardgame: Boardame.find(15)
+  boardgame: Boardgame.find(15)
   )
 
 # ###
@@ -309,7 +309,7 @@ Booking.create!(
   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
   end_at: DateTime.strptime("02/27/2021 17:00", "%m/%d/%Y %H:%M"),
   user: User.find(2),
-  boardgame: Boardame.find(14)
+  boardgame: Boardgame.find(14)
   )
 
 # ###
@@ -318,6 +318,6 @@ Booking.create!(
   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
   end_at: DateTime.strptime("03/02/2021 14:00", "%m/%d/%Y %H:%M"),
   user: User.find(3),
-  boardgame: Boardame.find(13)
+  boardgame: Boardgame.find(13)
   )
 
