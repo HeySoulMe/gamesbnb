@@ -1,4 +1,19 @@
 <h2>Hello <%= current_user.first_name %>!</h2>
-<p>Please find below your last bookings!</p>
 
-<p><%= @boardgames %></p>
+<h3>Please find below the boardgames you are sharing:</h3>
+<% current_user.boardgames.each do |boardgame| %>
+	<p><%= boardgame.name %></p>
+	<%#= cl_image_tag boardgame.photos.first.key %>
+<% end %>
+
+<h3>Here your actual bookings</h3>
+<% current_user.bookings.each do |booking| %>
+	<%= booking.start_at %>
+<% end %>
+
+
+<h3>Here the bookings where you are owner</h3>
+
+<%= current_user.bookings_as_owner %>
+
+
