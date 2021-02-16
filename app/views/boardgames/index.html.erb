@@ -2,21 +2,21 @@
 	<div class="row">
 		<div class="col-7 m-4">
 			<div class="row d-flex flex-column mb-4">
-				<p>+ <%= @boardgames.count %> boardgames</p>
-				<h3>Boardgames close to your localitation:</h3>
+				<h3>Boardgames close to your localisation:</h3>
 			</div>
-			<div class="cards">
+			<div class="cards-index">
 				<% @boardgames.each do |boardgame| %>
-					<div class="card d-flex">
+					<div class="card-index d-flex">
 						<% if boardgame.photo.attached? %>
-						  <%= cl_image_tag boardgame.photo.key, height: 300, width: 400, crop: :fill%>
+						  <!-- <div><%#= cl_image_tag("lwuozq4abmjrul25vlj9xtsrabss", width: 180, height: 180, crop: :fill, radius: 24, padding: 22) %></div> -->
+						  <%= cl_image_tag @article.photo.key, width: 180, height: 180, crop: :fill, radius: 24, padding: 22 %>
 						<% end %>
 						<div class="description text-center">
 							<h4><%= boardgame.name %></h4>
 							<hr>
-							<p><%= boardgame.category %></p>
+							<p class="description-content text-left"><%= boardgame.category %></p>
 							<p class="players"><%= boardgame.players %> <i class="fas fa-user-friends"></i></p>
-							<p class="text-center"><strong><%= boardgame.price.to_i %>€</strong> / week</p>
+							<p class="description-content text-left"><strong><%= boardgame.price.to_i %>€</strong> / week</p>
 						</div>
 					</div>
 				<% end %>
