@@ -13,11 +13,7 @@
     <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
   </div>
   <div class="checkin col-4">
-    <%= simple_form_for [@booking] do |f| %>
-      <%= f.input :start_at %>
-      <%= f.input :end_at %>
-      <%= f.submit %>
-      <% end %>
+    <% render "/shared/form"%>
   </div>
 </div>
 
