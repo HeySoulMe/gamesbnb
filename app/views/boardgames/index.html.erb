@@ -1,5 +1,27 @@
-<h1>Index</h1>
-
-<% @boardgames.each do |boardgame| %>
-	<p><%= link_to boardgame.name, '#' %></p>
-<% end %>
+<div class="container-xxl">
+	<div class="row">
+		<div class="col-7 m-4">
+			<div class="row d-flex flex-column mb-4">
+				<p>+ <%= @boardgames.count %> boardgames</p>
+				<h3>Boardgames close to your localitation:</h3>
+			</div>
+			<div class="cards">
+				<% @boardgames.each do |boardgame| %>
+					<div class="card d-flex">
+						<% if boardgame.photo.attached? %>
+						  <%= cl_image_tag boardgame.photo.key, height: 300, width: 400, crop: :fill%>
+						<% end %>
+						<div class="description text-center">
+							<h4><%= boardgame.name %></h4>
+							<hr>
+							<p><%= boardgame.category %></p>
+							<p class="players"><%= boardgame.players %> <i class="fas fa-user-friends"></i></p>
+							<p class="text-center"><strong><%= boardgame.price.to_i %>€</strong> / week</p>
+						</div>
+					</div>
+				<% end %>
+			</div>
+		</div>
+		<div class="map-container col-5">MAP</div>
+	</div>
+</div>

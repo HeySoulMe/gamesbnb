@@ -1,0 +1,42 @@
+.card {
+	width: 400px;
+	background-color: white;
+	border-radius: 14px;
+	box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.1);
+	transition: all ease 0.4s;
+	cursor: pointer;
+	opacity: 0.95;
+	&:hover {
+		box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.4);
+		opacity: 1.5;
+		.players {
+			box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+		}
+	}
+}
+
+.description {
+  position: relative;
+  padding: 10px;
+}
+
+.players {
+  position: absolute;
+  border-radius: 50%;
+  padding: 12px 8px;
+  top: 78px;
+  right: 31px;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  transition: all ease 0.4s;
+}
+
+.price {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+}
+
+.row {
+	flex-wrap: nowrap;
+}
