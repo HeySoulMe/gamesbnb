@@ -1,5 +1,22 @@
-<h1>Index</h1>
-
-<% @boardgames.each do |boardgame| %>
-	<p><%= link_to boardgame.name, '#' %></p>
-<% end %>
+<div class="main-container d-flex">
+	<div class="col-7 m-4">
+		<div class="row d-flex flex-column mb-4">
+			<p>More than 20 games</p>
+			<h3>Boardgames close to your localitation:</h3>
+		</div>
+		<div class="cards">
+			<% @boardgames.each do |boardgame| %>
+				<div class="card">
+					<img src="#" alt="img" style="width: 100, height: 1">
+					<div class="description">
+						<%= link_to boardgame.name, '#' %>
+						<%= link_to boardgame.category, '#' %>
+						<%= link_to boardgame.players, '#' %>
+						<%= link_to boardgame.price, '#' %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="map-container col-5">MAP</div>
+</div>
