@@ -1,0 +1,28 @@
+<div class="container">
+<div class="box-show">
+<h1><%= @boardgame.name  %></h1>
+<div class="product d-flex">
+  <div class="picture col-4">
+    <% if @boardgame.photos.attached? %>
+      <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
+    <% end %>
+  </div>
+  <div class="item col-4">
+    <h3>Description</h3>
+    <p><%= @boardgame.description %></p>
+    <p><%= "PRICE : #{@boardgame.price} € / day" %></p>
+    <h4>Owner info</h4>
+    <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
+  </div>
+</div>
+
+<p class="players-show"><%= @boardgame.players %> <i class="fas fa-user-friends"></i></p>
+
+
+</div>
+<%# <div class="map-container col-5">MAP</div> %>
+<br>
+<br>
+<br>
+<%= link_to "Back to the Boardgames List", boardgames_path %>
+</div>
