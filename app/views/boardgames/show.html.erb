@@ -1,22 +1,27 @@
+<div class="container">
 <h1><%= @boardgame.name  %></h1>
 <ul>
 <% if @boardgame.photo.attached? %>
   <%= cl_image_tag @boardgame.photo.key, width:100 , height:150, crop: :fill %>
 <% end %>
-<div class = d-flex>
+
 <li><p><%= @boardgame.description %></p></li>
-<li><p><%= @boardgame.price %></p></li>
-</div>
+
+<li><p><%= "#{@boardgame.price} €" %></p></li>
+</ul>
+<p class="players-show"><%= @boardgame.players %> <i class="fas fa-user-friends"></i></p>
+
 <div class = d-flex> 
 <div class = box>
 </div> 
 </div>
-</ul>
-<p>contact info </p>
-<div class = "card" >
-  <%= @user.first_name %><%= @user.last_name %>
-</div>
 
-<div class="map-container col-5">MAP</div>
+<p>Owner info</p>
+<%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
+
+<%# <div class="map-container col-5">MAP</div> %>
+<br>
+<br>
 <br>
 <%= link_to "Back to the Boardgames List", boardgames_path %>
+</div>
