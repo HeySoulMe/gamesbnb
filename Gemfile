@@ -27,9 +27,12 @@ gem 'jbuilder', '~> 2.7'
 
 # adding Devise
 gem 'devise'
+gem 'pundit'
+
 # Needed for cloudinary
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

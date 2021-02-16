@@ -7,13 +7,16 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <link href="https://fonts.googleapis.com/css?family=Poppins:600" rel="stylesheet">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
+    <div style="min-height: 100vh; "><%= yield %></div>
+    <%= render "shared/footer" %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+  
   </body>
 </html>
