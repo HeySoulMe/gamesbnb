@@ -1,15 +1,15 @@
 class BoardgamesController < ApplicationController
   def index
-    @boardgames = Boardgame.all
+    @boardgames = policy_scope(Boardgame)
   end
 
   def new
     @boardgame = Boardgame.new
+    authorize @boardgame
   end
 
   def create
     @boardgame = Boardgame.new(boardgame_params)
-    @boardgame.save
     if @boardgame.save
       redirect_to boardgame_path(@boardgame)
     else
@@ -20,6 +20,6 @@ class BoardgamesController < ApplicationController
   private
 
   def boardgame_params
-    params.require(:boardgame).permit(:name, :description, :category, :players, :price, :address)
+    params.require(:boardgame).permit(:name, :description, :category, :players, :price, :address, :photo)
   end
 end
