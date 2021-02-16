@@ -1,6 +1,6 @@
 class BoardgamesController < ApplicationController
   def index
-    @boardgames = Boardgame.all
+    @boardgames = policy_scope(Boardgame)
   end
 
   def new
