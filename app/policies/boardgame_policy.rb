@@ -9,8 +9,18 @@ class BoardgamePolicy < ApplicationPolicy
     true
   end
   
+<<<<<<< HEAD
   def show?
     true
   end
 
+=======
+  def create?
+    true
+  end
+
+  def show?
+    true
+  end
+>>>>>>> master
 end

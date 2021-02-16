@@ -1,2 +1,54 @@
-<h1>This is the new boardgame view</h1>
+<div class="container mt-2">
+  <h1><strong>ADD A NEW BOARDGAME</strong></h1>
+    <h2><%= @boardgame.name %></h2>
+    <%= simple_form_for@boardgame do |f| %>
+    <%= f.input :name, placeholder: "Boardgame name"%>
+    <%= f.input :address, placeholder: "Address"%>
+    <div class="section">
+    <%= f.input :category, name:"category", placeholder: "Boardgame Category"%>
+    <label for="category" class="field-icon"></label>  
+    </label>
+    </div>   
+
+    <div class="d-flex">
+    <div class="one-input">
+    <label for="price" class="field prepend-icon">
+    <%= f.input :price, name:"price", class: "gui-input", placeholder: "Current prince"%>
+    </div>
+    <label for="price" class="field-icon"><i class="fas fa-euro-sign"></i></label>  
+    </label>
+    </div>
+
+    <div class="d-flex">
+    <div class="one-input">
+    <label for="price" class="field prepend-icon">
+    <%= f.input :players, name:"players", class: "gui-input", placeholder: "Number of players"%>
+    </div>
+    <label for="players" class="field-icon"><i class="fas fa-user-friends"></i></label>  
+    </label></div>
+
+
+    <div class="section">
+    <label for="image" class="field file">
+    <span class="button btn-primary"> Add image? </span>
+    <input type="file" class="gui-file" name="upload1" id="file1" onChange="document.getElementById('uploader1').value = this.value;">
+    <input type="text" class="gui-input" id="uploader1" placeholder="no file selected" readonly>
+    </label>
+    </div>
+                    
+          <div class="section">
+            <label for="description" class="field prepend-icon">
+              <%= f.input :description, name:"description", placeholder:"Description of the boardgame"%>
+              <label for="description" class="field-icon"><i class="fa fa-comments"></i></label>
+              <span class="input-hint"> 
+              <strong>DO NOT:</strong> Show bad rules of your boardgame for confusing people. 
+              </span>   
+            </label>
+          </div>                
+                    
+          <div class="form-footer">
+          <%= f.submit class:"btn-primary", placeholder: "New Boardgame"%>
+          </div>
+  <% end %>
+</div><!-- end .smart-wrap section -->
 
