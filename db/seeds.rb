@@ -115,7 +115,7 @@ user = User.new(
 user.save!
 
 boardgame = Boardgame.create!(
-  name: 'Question pour un champion',
+  name: 'Questions pour un champion',
   description: 'Difficult especially if you are not french',
   category: 'TV game',
   players: 2,
