@@ -5,8 +5,8 @@
     <div class="sp-globe"></div>
     <h1>🎲GamesBnb🎲</h1>
     <h2 class="frame-1">WELCOME</h2>
-    <h2 class="frame-2">TO our Website</h2>
-    <h2 class="frame-3">Discover many Boardgames</h2>
+    <h2 class="frame-2">To our Website</h2>
+    <h2 class="frame-3">Discover many boardgames</h2>
   </div>
 </div>
 
@@ -136,16 +136,104 @@
               </div>
             </div>
 
-            <div class="divider">
-              <div class="bar"></div>
-              <div class="show-more">
-                Show more <i class="fa fa-chevron-down"></i>
-              </div>
-              <div class="bar"></div>   
-            </div>
+
 
           </div>
         </div>
       </div>
 </div>
+      <div>
+        <div class="custom-slider">
+            <div class="custom-slide custom-slide1 active-slide" style="background:url(https://agileui.com/demo/monarch/assets/image-resources/blurred-bg/blurred-bg-2.jpg)">
+              <div class="slide-overlay"></div>
+              <div class="custom-caption">
+                <h1 class="text-center display-4 my-3"> ALL OUR BOARDGAMES</h1>
+                <h3 class="text-center font-weight-light my-3"> Look at these new boardgames</h3>
+                <a class="button">See all</a>
+              </div>
+            </div>
+</div>
+        <section>
 
+        <div class="container-flow">
+          <div class="container trf-up text-secondary bg-white">
+            <div class="row">
+
+              <div class="col-md-4 py-4 bg-purple text-light">
+                <h1 class="text-center"> <i class=""></i></h1>
+                <h3 class="text-center font-weight-light pb-3">SCRABBLE</h3>
+                <p class="text-center">Chaque tour est chronométré, lorsque le chronomètre est à 0 le tour s'arrête.
+Pendant le tour chaque joueur essaie de former le mot comptant le plus de points sur le plateau.
+A l'issu du tour, chaque joueur marque les points du meilleur mot qu'il a trouvé.
+Ensuite on détermine quel est le meilleur mot trouvé parmi l'ensemble des joueurs.
+C'est ce mot que chacun mettra sur le plateau.
+Enfin chaque joueur reçoit à nouveau les mêmes 7 lettres et le tour suivant démarre.</p>
+              </div>
+
+              <div class="col-md-4 py-4 bg-purple text-light position-relative">
+                <div class="custom-overlay"></div>
+                <div class="position-relative" style="z-index:3">
+                  <h1 class="text-center"> <i class=""></i></h1>
+                  <h3 class="text-center font-weight-light pb-3">RISK</h3>
+                  <p class="text-center">Principe du jeu : Choisissez votre stratégie, déplacez vos régiments et commencez la conquête ! Votre mission: mettre vos ennemis en déroute, faire avancer vos soldats pour conquérir de nouveaux territoires et remporter la partie. De 2 à 5 joueurs. Temps de la partie : environ 90 minutes. Âge recommandé : à partir de 10 ans.</p>
+                </div>
+              </div>
+
+              <div class="col-md-4 py-4 bg-purple text-light">
+                <h1 class="text-center"> <i class=""></i></h1>
+                <h3 class="text-center font-weight-light pb-3">Dali</h3>
+                <p class="text-center">But du jeu :
+                Poser toutes ses cartes sur la table
+                et posséder le MOINS de points.
+                Lorsqu’un joueur pose toutes ses cartes, la manche s’arrête et les autres joueurs cumulent des points par rapport aux cartes qu’il leur reste en main (malus).</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.2.0/dist/simpleParallax.min.js"></script>
+          <script src="js/slider.js"></script>
+          <script>
+              $('.owl-carousel').owlCarousel({
+              loop:true,
+              margin:10,
+              nav:true,
+              autoplay:true,
+              autoplayTimeout:3000,
+              autoplayHoverPause:true,
+              responsive:{
+                  0:{
+                      items:1
+                  },
+                  600:{
+                      items:3
+                  },
+                  1000:{
+                      items:5
+                  }
+              }
+            })
+          </script>
+          <script>
+          var image = document.getElementById('paralax');
+          new simpleParallax(image, {
+            delay: .6,
+            transition: 'cubic-bezier(0,0,0,1)',
+            orientation:'right'
+
+          })
+          var image2=document.getElementById('paralax2');
+        new simpleParallax(image2, {
+          delay: .3,
+          transition: 'cubic-bezier(0,0,0,1)',
+          orientation:'left'
+        })
+          </script>
+      </section>
+      </div>
