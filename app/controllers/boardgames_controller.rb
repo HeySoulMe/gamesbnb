@@ -16,6 +16,11 @@ class BoardgamesController < ApplicationController
     @boardgame = Boardgame.find(params[:id])
     authorize @boardgame
     @booking = Booking.new
+    @markers = [{
+      lat: @boardgame.latitude,
+      lng: @boardgame.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { boardgame: @boardgame }),
+    }]
   end
 
   def new

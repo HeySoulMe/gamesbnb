@@ -1,32 +1,33 @@
-
-
 <div class="container">
-<div class="box-show">
-<h1><%= @boardgame.name  %></h1>
-<div class="product d-flex">
-  <div class="picture col-4">
-    <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
+  <div class="box-show">
+    <h1><%= @boardgame.name  %></h1>
+    <div class="product d-flex">
+      <div class="picture col-4">
+        <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
+      </div>
+      <div class="prodescr col-4">
+        <h3>Description</h3>
+        <p><%= @boardgame.description %></p>
+        <p><%= "PRICE : #{@boardgame.price} € / day" %></p>
+        <h4>Owner info</h4>
+        <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
+        <br>
+        <%= @boardgame.address %>
+      </div>
+      <div class="checkin col-4">
+        <%= render "/shared/form"%>
+      </div>
+    </div>
+    <p class="players-show"><%= @boardgame.players %> <i class="fas fa-user-friends"></i></p>
   </div>
-  <div class="item col-4">
-    <h3>Description</h3>
-    <p><%= @boardgame.description %></p>
-    <p><%= "PRICE : #{@boardgame.price} € / day" %></p>
-    <h4>Owner info</h4>
-    <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
-  </div>
-  <div class="checkin col-4">
-    <%= render "/shared/form"%>
-  </div>
-</div>
-
-
-<p class="players-show"><%= @boardgame.players %> <i class="fas fa-user-friends"></i></p>
-
-
-</div>
 <%# <div class="map-container col-5">MAP</div> %>
-<br>
-<br>
-<br>
-<%= link_to "Back to the Boardgames List", boardgames_path %>
+  <div id="map"
+      style="width: 100%;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+  <br>
+  <br>
+  <br>
+  <%= link_to "Back to the Boardgames List", boardgames_path %>
 </div>

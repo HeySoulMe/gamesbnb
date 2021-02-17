@@ -12,6 +12,8 @@
   margin-top: 15px;
   padding: 15px;
   position: relative;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 }
 
 p {
@@ -21,10 +23,9 @@ p {
 h4 {
   margin-top: 4px;
 }
-
 .checkin {
   border: 1px solid grey;
-
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  border-radius: 3px;
 }
 
-// test
