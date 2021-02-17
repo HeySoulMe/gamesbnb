@@ -37,7 +37,7 @@
 
   </div>
   <div class="page-content">
-    <div class="header"><%= current_user.first_name %></div>
+    <div class="header"><%= current_user.first_name %> <%= current_user.last_name %></div>
 
     <div class="content-categories">
       <div class="label-wrapper">
@@ -48,48 +48,29 @@
 
 
     <div class="tasks-wrapper">
-      <div class="header upcoming">AS USER</div>
-      <div class="task">
-        <label for="item-1">
-          <span class="label-text">Monopoly deluxe </span>
-          <span class="tag waiting"> 15/01/21 </span>
-        </label>
-
-      </div>
       <div class="task">
 
-        <label for="item-2">
-          <span class="label-text">Puissance 4</span>
-          <span class="tag waiting"> 18/01/21 </span>
-        </label>
+        <div class="cards-dashboard">
+          <div class="card-dashboard d-flex align-items-center">
+          <% current_user.boardgames.each do |boardgame| %>
+            <%= cl_image_tag boardgame.photos.first.key, width: 160, height: 160, crop: :fill, radius: 24, padding: 22 %>
+            <div class="description-yourbooking-dashboard text-left">
+              <p class="title" id="title-your-bookings"><strong></strong><%= boardgame.name %></p>
+              <p class="date-your-bookings"><%= boardgame.address %></p>
+              <p class="price-your-bookings"><%= boardgame.price %>€</p>
+            </div>
+            <div class="actions-dashboard d-flex justify-content-around">
+              <div class="pending-msg text-center">
+                <p>Pending</p>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
 
-      </div>
-
-      <div class="task">
-        <label for="item-3">
-          <span class="label-text">Chess Royal</span>
-          <span class="tag waiting"> 28/01/21 </span>
-        </label>
       </div>
 
 
-      <div class="header upcoming">AS OWNER</div>
-
-      <div class="task">
-        <input class="task-item" name="task" type="checkbox" id="item-7">
-        <label for="item-7">
-          <span class="label-text">Dashboard Design Implementation</span>
-        </label>
-        <span class="tag waiting">Waiting</span>
-      </div>
-
-      <div class="task">
-        <input class="task-item" name="task" type="checkbox" id="item-8">
-        <label for="item-8">
-          <span class="label-text">Create a userflow</span>
-        </label>
-        <span class="tag waiting">Waiting</span>
-      </div>
 
 
     </div>
