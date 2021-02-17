@@ -1,11 +1,12 @@
 .card-index {
+  color: black;
 	background-color: white;
 	border-radius: 14px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
   margin-bottom: 15px;
   margin-left: 20px;
   margin-bottom: 15px;
-	transition: all ease 0.4s;
+	transition: all ease 0.3s;
 	cursor: pointer;
 	overflow: hidden;
 	opacity: 0.95;
@@ -36,8 +37,8 @@
   position: absolute;
   border-radius: 50%;
   padding: 12px 8px;
-  bottom: 98px;
-  right: 9px;
+  bottom: 78px;
+  right: 11px;
   background-color: white;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   transition: all ease 0.4s;
@@ -47,5 +48,6 @@
   position: absolute;
   bottom: 14px;
   right: 14px;
+  font-size: 18px;
 }
 
