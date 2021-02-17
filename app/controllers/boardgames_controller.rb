@@ -10,6 +10,8 @@ class BoardgamesController < ApplicationController
 
   def create
     @boardgame = Boardgame.new(boardgame_params)
+    @boardgame.user = current_user
+    authorize @boardgame 
     if @boardgame.save
       redirect_to boardgame_path(@boardgame)
     else
