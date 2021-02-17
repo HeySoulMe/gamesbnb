@@ -3,6 +3,12 @@ class BoardgamesController < ApplicationController
     @boardgames = policy_scope(Boardgame)
   end
 
+  def show
+    @boardgame = Boardgame.find(params[:id])
+    authorize @boardgame
+
+  end
+
   def new
     @boardgame = Boardgame.new
     authorize @boardgame
