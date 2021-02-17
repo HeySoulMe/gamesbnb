@@ -8,10 +8,12 @@ class BookingsController < ApplicationController
     @boardgame = Boardgame.find(params[:boardgame_id])
     @booking = Booking.new(booking_params)
     @booking.boardgame = @boardgame
+    @booking.user = current_user
+    authorize @booking
     if @booking.save
       redirect_to dashboard_path
     else
-      render :new
+      render "boardgames/show"
     end
   end
 
