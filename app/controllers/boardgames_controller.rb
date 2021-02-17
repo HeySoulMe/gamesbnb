@@ -1,6 +1,15 @@
 class BoardgamesController < ApplicationController
   def index
     @boardgames = policy_scope(Boardgame)
+
+    # the `geocoded` scope filters only flats with coordinates (latitude & longitude)
+    @markers = @boardgames.geocoded.map do |boardgame|
+    {
+      lat: boardgame.latitude,
+      lng: boardgame.longitude,
+      infoWindow: render_to_string(partial: "info_window", locals: { boardgame: boardgame }),
+    }
+    end
   end
 
   def show
