@@ -343,7 +343,7 @@ boardgame.photos.attach(io: file, filename: 'puissance_quatro.jpg', content_type
 # bookings see
 
 Booking.create!(
-  start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
+  start_at: DateTime.strptime("01/01/2021 12:00", "%m/%d/%Y %H:%M"),
   end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
   user: User.find(1),
   boardgame: Boardgame.find(15)
