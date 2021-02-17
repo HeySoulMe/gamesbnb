@@ -342,28 +342,28 @@ boardgame.photos.attach(io: file, filename: 'puissance_quatro.jpg', content_type
 
 # bookings see
 
-Booking.create!(
-  start_at: DateTime.strptime("01/01/2021 12:00", "%m/%d/%Y %H:%M"),
-  end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
-  user: User.find(1),
-  boardgame: Boardgame.find(15)
-  )
+# Booking.create!(
+#   start_at: DateTime.strptime("01/01/2021 12:00", "%m/%d/%Y %H:%M"),
+#   end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
+#   user: User.find(1),
+#   boardgame: Boardgame.find(15)
+#   )
 
-# ###
+# # ###
 
-Booking.create!(
-  start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
-  end_at: DateTime.strptime("02/27/2021 17:00", "%m/%d/%Y %H:%M"),
-  user: User.find(2),
-  boardgame: Boardgame.find(14)
-  )
+# Booking.create!(
+#   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
+#   end_at: DateTime.strptime("02/27/2021 17:00", "%m/%d/%Y %H:%M"),
+#   user: User.find(2),
+#   boardgame: Boardgame.find(14)
+#   )
 
-# ###
+# # ###
 
-Booking.create!(
-  start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
-  end_at: DateTime.strptime("03/02/2021 14:00", "%m/%d/%Y %H:%M"),
-  user: User.find(3),
-  boardgame: Boardgame.find(13)
-  )
+# Booking.create!(
+#   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
+#   end_at: DateTime.strptime("03/02/2021 14:00", "%m/%d/%Y %H:%M"),
+#   user: User.find(3),
+#   boardgame: Boardgame.find(13)
+#   )
 
