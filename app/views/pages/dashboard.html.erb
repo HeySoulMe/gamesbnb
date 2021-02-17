@@ -31,6 +31,11 @@
         <li class="item">
           <span>Messages</span>
         </li>
+
+        <li class="item">
+          <span><%= link_to "Back", boardgames_path %></span>
+        </li>
+      </ul>
       </ul>
       
     </div>
@@ -51,21 +56,21 @@
       <div class="task">
 
         <div class="cards-dashboard">
-          <div class="card-dashboard d-flex align-items-center">
-          <% current_user.boardgames.each do |boardgame| %>
-            <%= cl_image_tag boardgame.photos.first.key, width: 160, height: 160, crop: :fill, radius: 24, padding: 22 %>
-            <div class="description-yourbooking-dashboard text-left">
-              <p class="title" id="title-your-bookings"><strong></strong><%= boardgame.name %></p>
-              <p class="date-your-bookings"><%= boardgame.address %></p>
-              <p class="price-your-bookings"><%= boardgame.price %>€</p>
-            </div>
-            <div class="actions-dashboard d-flex justify-content-around">
-              <div class="pending-msg text-center">
-                <p>Pending</p>
+          <% @bookings.each do |booking| %>
+            <div class="card-dashboard d-flex align-items-center">
+              <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
+              <div class="description-yourbooking-dashboard text-left">
+                <p class="title" id="title-your-bookings"><strong></strong><%= booking.boardgame.name %></p>
+                <p class="date-your-bookings"><%= booking.boardgame.address %></p>
+                <p class="price-your-bookings"><%= booking.boardgame.price.to_i %>€ / day</p>
+              </div>
+              <div class="actions-dashboard d-flex justify-content-around">
+                <div class="pending-msg text-center">
+                  <p>Pending</p>
+                </div>
               </div>
             </div>
-            <% end %>
-          </div>
+          <% end %>
         </div>
 
       </div>
