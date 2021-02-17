@@ -6,7 +6,6 @@ class BoardgamesController < ApplicationController
   def show
     @boardgame = Boardgame.find(params[:id])
     authorize @boardgame
-    #@boardgame = Boardgame.find(params[:boardgame_id])
     @booking = Booking.new
   end
 
