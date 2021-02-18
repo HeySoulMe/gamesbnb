@@ -8,7 +8,7 @@ Boardgame.destroy_all
 User.destroy_all
 
 # user seed
-user = User.new(
+user1 = User.new(
   username: "Test User 1st",
   first_name: "Edouard",
   last_name: "Belfond",
@@ -17,9 +17,9 @@ user = User.new(
   )
 user.save!
 
-boardgame = Boardgame.create!(
+boardgame1 = Boardgame.create!(
   name: 'Seven Wonders',
-  description: 'A nice game',
+  description: '7 Wonders is a dedicated deck card game that features ancient civilizations. It is very pleasant to play with friends',
   category: 'TotalWar',
   players: 4,
   price: 7,
@@ -28,7 +28,27 @@ boardgame = Boardgame.create!(
 file = URI.open('https://akoatujou.fr/wp-content/uploads/2019/04/7_Wonders-1200x800-c-default.png')
 boardgame.photos.attach(io: file, filename: 'sevenwonder.jpg', content_type: 'image/jpg')
 
-user = User.new(
+user2 = User.new(
+  username: "Test User 2nd",
+  first_name: "Alexandra",
+  last_name: "Canuel",
+  email: "alexandra@park_easy.com",
+  password: 123456
+  )
+user.save!
+
+boardgame2 = Boardgame.create!(
+  name: 'Tock',
+  description: 'The tock game or tock game is a board game close to the game of little horses. It is played by two teams of two diametrically opposed players, each with four pawns. The winning team is the first to return its 4 pawns per team member to its "house".',
+  category: 'Kids',
+  players: 2,
+  price: 5,
+  address: '1 Avenue Claude Vellefaux, 75010 Paris',
+  user: user)
+file = URI.open('https://cf.geekdo-images.com/8a6_5jcQ7X46EIKFEeyW9g__opengraph_left/img/ymAfP59qzWdichydYUFMQ4G52GM=/fit-in/445x445/filters:strip_icc()/pic989128.jpg')
+boardgame.photos.attach(io: file, filename: 'tock.jpg', content_type: 'image/jpg')
+
+user3 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
@@ -37,7 +57,7 @@ user = User.new(
   )
 user.save!
 
-boardgame = Boardgame.create!(
+boardgame3 = Boardgame.create!(
   name: 'Perudo',
   description: 'A terrible game',
   category: 'Dices',
