@@ -371,6 +371,7 @@ Booking.create!(
   start_at: DateTime.strptime("01/01/2021 12:00", "%m/%d/%Y %H:%M"),
   end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
   user: user1,
+  status: "pending",
   boardgame: boardgame17
   )
 
@@ -380,6 +381,7 @@ Booking.create!(
   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
   end_at: DateTime.strptime("02/27/2021 17:00", "%m/%d/%Y %H:%M"),
   user: user2,
+  status: "pending",
   boardgame: boardgame16
   )
 
@@ -389,6 +391,7 @@ Booking.create!(
   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
   end_at: DateTime.strptime("03/02/2021 14:00", "%m/%d/%Y %H:%M"),
   user: user3,
+  status: "pending",
   boardgame: boardgame3
   )
 
