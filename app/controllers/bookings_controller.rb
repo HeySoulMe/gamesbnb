@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.boardgame = @boardgame
     @booking.user = current_user
-    @booking.status = "Pending"
+    @booking.status = "pending"
     authorize @booking
     if @booking.save
       redirect_to dashboard_path
@@ -18,13 +18,14 @@ class BookingsController < ApplicationController
     end
   end
 
-  def change_status
-    if @booking.status == "Pending" &&
-      @status
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+  end
 
-    else
-
-    end
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
   end
 
   private
