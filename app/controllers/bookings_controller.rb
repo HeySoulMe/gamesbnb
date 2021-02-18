@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.boardgame = @boardgame
     @booking.user = current_user
+    @booking.status = "pending"
     authorize @booking
     if @booking.save
       redirect_to dashboard_path
@@ -17,9 +18,19 @@ class BookingsController < ApplicationController
     end
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:start_at, :end_at)
+    params.require(:booking).permit(:start_at, :end_at, :status)
   end
 end
