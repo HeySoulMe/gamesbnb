@@ -7,7 +7,7 @@
 			<div class="cards-index">
 				<% @boardgames.each do |boardgame| %>
 					<%= link_to boardgame_path(boardgame) do %>
-						<div class="card-index">
+						<div class="card-index" data-boardgame-id="<%= boardgame.id %>">
 								<% if boardgame.photos.attached? %>
 								  <%= cl_image_tag boardgame.photos.first.key, crop: :fill, width: 332, height: 236 %>
 								<% end %>
@@ -21,9 +21,7 @@
 					<% end %>
 				<% end %>
 			</div>
-		</div>
-		<!--<div class="map-container col-5">-->
-		<div id="map"
+		</div>		<div id="map"
      		style="width: 100%;"
      		data-markers="<%= @markers.to_json %>"
      		data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
