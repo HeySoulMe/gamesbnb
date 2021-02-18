@@ -149,7 +149,7 @@ boardgame7 = Boardgame.create!(
   category: 'TV game',
   players: 2,
   price: 5,
-  address: 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris',
+  address: "5 Avenue Anatole France, 75007 Paris",
   user: user7)
 file = URI.open('https://escaleajeux.fr/q/qchaw_01.jpg')
 boardgame7.photos.attach(io: file, filename: 'question_pour_un_champion.jpg', content_type: 'image/jpg')
