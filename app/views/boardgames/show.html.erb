@@ -1,34 +1,37 @@
-<div id="map"
+<div id="map" class="mapshow"
   style="width: 100%; height: 400px; background;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<div class="container">
+<div class="container" style="margin-top: -145px;">
   <div class="row">
     <div class="col-8-show">
       <div class="game-show-title-card">
         <h1><%= @boardgame.name %></h1>
+        <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name} - #{@boardgame.address}" %>
       </div>
       <div class="picture-descr-show-card">
         <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
-        <h3>Description</h3>
+        <br>
+        <h3>A little bit more about this boardgame ...</h3>
         <p><%= @boardgame.description %></p>
-        <%= @boardgame.players %> <i class="fas fa-user-friends"></i>
       </div>
     </div>
     <div class="col-4-show">
       <div class="booking-show-card" data-price="<%=@price%>"> 
       <h2>Book your boardgame</h2>
         <%= render "/shared/form"%>
+        <p id = "total-amount"></p>
       </div>
       <div class="price-card-show">
-        <p><%= "RENTAL PRICE : #{@boardgame.price} € / day" %></p>
-        <p id = "total-amount"></p>
+        <p><%= "#{@boardgame.price.to_i} € / day" %></p>
+        <%= "#{@boardgame.players}" %> <i class="fas fa-user-friends"></i>
         </div>
-        <div class="owner-show-card">
-        <h4>Owner info</h4>
-        <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name}" %>
-        <%= @boardgame.address %>
+        <div class="share-show-card">
+        <h4>Share it !</h4>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
         </div>
       </div>
     </div>
