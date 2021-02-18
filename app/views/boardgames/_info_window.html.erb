@@ -1,2 +1,7 @@
-<h2><%= boardgame.name %></h2>
-<p><%= boardgame.address %></p>
+<div class="mapbox-popup-container d-flex">
+	<%= cl_image_tag boardgame.photos.first.key, crop: :fill, width: 115, height: 115 %>
+	<div class="ml-2">
+		<h4><%= link_to boardgame.name, boardgame_path(boardgame) %></h4>
+		<p><%= boardgame.address %></p>
+	</div>
+</div>
