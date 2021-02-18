@@ -1,139 +1,40 @@
-
-<h1 style="text-align: center; color: wheat;
-    margin-top: 10px;";>Dashboard</h1>
-<div style="margin-top: 40px;">
-<link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
-<div class="task-manager">
-  <div class="left-bar">
-
-    <div class="upper-part">
-      <div class="actions">
-        <div class="circle"></div>
-      </div>
-    </div>
-
-    <div class="left-content">
-      <ul class="action-list">
-        <li class="item">
-
-          <span>Bookings</span>
-        </li>
-        <li class="item">
-
-          <span> Boardgames</span>
-        </li>
-        <li class="item">
-
-
-          <span>Favourites</span>
-        </li>
-
-        <li class="item">
-          <span>Messages</span>
-        </li>
-
-        <li class="item">
-          <span><%= link_to "Back", boardgames_path %></span>
-        </li>
-      </ul>
-      </ul>
-      
-    </div>
-
-  </div>
-  <div class="page-content">
-    <div class="header"><%= current_user.first_name %> <%= current_user.last_name %></div>
-
-    <div class="content-categories">
-      <div class="label-wrapper">
-        <input class="nav-item" name="nav" type="radio" id="opt-1">
-        <label class="category" for="opt-1">Bookings</label>
-      </div>
-    </div>
-
-
-    <div class="tasks-wrapper">
-      <div class="task">
-
-        <div class="cards-dashboard">
-          <% @bookings.each do |booking| %>
-            <div class="card-dashboard d-flex align-items-center">
-              <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
-              <div class="description-yourbooking-dashboard text-left">
-                <p class="title" id="title-your-bookings"><strong></strong><%= booking.boardgame.name %></p>
-                <p class="date-your-bookings"><%= booking.boardgame.address %></p>
-                <p class="price-your-bookings"><%= booking.boardgame.price.to_i %>€ / day</p>
-              </div>
-              <div class="actions-dashboard d-flex justify-content-around">
-                <div class="pending-msg text-center">
-                  <p>Pending</p>
-                </div>
-              </div>
+<div class="container">
+    <div class="cards-dashboard">
+      <% @bookings.each do |booking| %>
+        <div class="card-dashboard d-flex align-items-center">
+          <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
+          <div class="description-yourbooking-dashboard text-left">
+            <p class="title" id="title-your-bookings"><strong></strong><%= booking.boardgame.name %></p>
+            <p class="date-your-bookings"><%= booking.boardgame.address %></p>
+            <p class="price-your-bookings"><%= booking.boardgame.price.to_i %>€ / day</p>
+          </div>
+          <div class="actions-dashboard d-flex justify-content-around">
+            <div class="pending-msg text-center">
+              <p> <%= booking.status %> </p>
             </div>
-          <% end %>
+          </div>
         </div>
-
-      </div>
-
-
-
-
+      <% end %>
+  </div class="align-items-center" >
+      <h1>My boardgame: </h1>
+      <div>
+        <% @bookings_as_owner.each do |booking| %>
+        <div class="card-dashboard d-flex align-items-center">
+          <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
+          <div class="description-yourbooking-dashboard text-left">
+            <p class="title" id="title-your-bookings"><strong></strong><%= booking.boardgame.name %></p>
+          </div>
+          <div class="actions-dashboard d-flex justify-content-around">
+            <div class="pending-msg text-center">
+              <button type="button" class="btn btn-success" id="validate-booking">Accept</button>
+              <button type="button" class="btn btn-danger">Decline</button>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
-  </div>
-
-  <div class="right-bar">
-
-
-    <div class="header">Messages</div>
-
-    <div class="right-content">
-      <div class="task-box yellow">
-        <div class="description-task">
-          <div class="time">08:00 - 09:00 AM</div>
-          <div class="task-name">Jean-Castex</div>
-          <p>J'aimerais bien louer ton jeu "Tous contre Corona" pour le week-end du 24 </p>
-        </div>
-        <div class="more-button"></div>
-        <div class="members">
-          <img
-            src="https://i.la-croix.com/729x486/2021/02/12/1301140409/Premier-ministre-Jean-Castex-Paris-3-fevrier-2021_0.jpg"
-            alt="member">
- 
-        </div>
-      </div>
-
-      <div class="task-box blue">
-        <div class="description-task">
-          <div class="time">10:00 - 11:00 AM</div>
-          <div class="task-name">Javier Cuadrado</div>
-          <p> Pourrions-nous rentrer en contact?</p>
-        </div>
-        <div class="more-button"></div>
-        <div class="members">
-          <img
-            src="https://ca.slack-edge.com/T02NE0241-U01HG4D9HC7-3c847ce4893e-512"
-            alt="member">
-
-        </div>
-      </div>
-
-      <div class="task-box red">
-        <div class="description-task">
-          <div class="time">01:00 - 02:00 PM</div>
-          <div class="task-name">Wadi</div>
-          <p>Besoin d'un de tes jeux de société disponible. Urgent!!</p>
-        </div>
-        <div class="more-button"></div>
-        <div class="members">
-          <img
-            src="https://ca.slack-edge.com/T02NE0241-UKVTJ1G0J-02d868acbde0-512"
-            alt="member">
-
-        </div>
-      </div>
-
-
-    </div>
-  </div>
+   </div>
 </div>
-</div>
+
+

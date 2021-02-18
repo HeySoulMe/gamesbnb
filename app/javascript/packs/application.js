@@ -21,6 +21,7 @@ require("channels")
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
+// import { acceptBooking } from '../components/_button-status';
 
 // External imports
 import "bootstrap";
@@ -40,5 +41,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   flatpicker();
   initMapbox();
+  // acceptBooking();
 });
 
