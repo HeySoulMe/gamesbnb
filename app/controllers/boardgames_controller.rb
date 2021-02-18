@@ -16,6 +16,7 @@ class BoardgamesController < ApplicationController
     @boardgame = Boardgame.find(params[:id])
     authorize @boardgame
     @booking = Booking.new
+    @price = @boardgame.price
     @markers = [{
       lat: @boardgame.latitude,
       lng: @boardgame.longitude,

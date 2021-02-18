@@ -1,5 +1,5 @@
 <div id="map"
-  style="width: 100%; height: 400px;background-image"
+  style="width: 100%; height: 400px; background;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
@@ -17,13 +17,13 @@
       </div>
     </div>
     <div class="col-4-show">
-      <div class="booking-show-card">
+      <div class="booking-show-card" data-price="<%=@price%>"> 
       <h2>Book your boardgame</h2>
         <%= render "/shared/form"%>
       </div>
       <div class="price-card-show">
         <p><%= "RENTAL PRICE : #{@boardgame.price} € / day" %></p>
-        <p><%=  "YOUR RENT TOTAL =  #{@boardgame.price.to_i} "  %></p>
+        <p id = "total-amount"></p>
         </div>
         <div class="owner-show-card">
         <h4>Owner info</h4>
@@ -35,3 +35,4 @@
   </div>
   <%= link_to "Back to the Boardgames List", boardgames_path %>
 </div>
+
