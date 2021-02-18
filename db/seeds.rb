@@ -25,7 +25,7 @@ boardgame = Boardgame.create!(
   price: 7,
   address: '55Bis Quai de Valmy, 75010 Paris',
   user: user)
-file = URI.open('https://alloescape.fr/wp-content/uploads/2018/05/7-wonders-vf.jpg')
+file = URI.open('https://akoatujou.fr/wp-content/uploads/2019/04/7_Wonders-1200x800-c-default.png')
 boardgame.photos.attach(io: file, filename: 'sevenwonder.jpg', content_type: 'image/jpg')
 
 user = User.new(
@@ -65,7 +65,7 @@ boardgame = Boardgame.create!(
   price: 6,
   address: '77 Rue de Varenne, 75007 Paris',
   user: user)
-file = URI.open('https://www.espritjeu.com/upload/image/catan-p-image-65490-moyenne.jpg')
+file = URI.open('https://steamcdn-a.akamaihd.net/steam/apps/544730/capsule_616x353.jpg?t=1572340135')
 boardgame.photos.attach(io: file, filename: 'catan.jpg', content_type: 'image/jpg')
 
 user = User.new(
@@ -85,7 +85,7 @@ boardgame = Boardgame.create!(
   price: 3,
   address: '47 Rue des Couronnes, 75020 Paris',
   user: user)
-file = URI.open('https://images-na.ssl-images-amazon.com/images/I/913eRdQEQzL._AC_SL1500_.jpg')
+file = URI.open('https://static.fnac-static.com/multimedia/Images/FR/MDM/c1/29/38/3680705/1505-1/tsp20210205091935/Dujardin-Serie-Noire-Yam-421.jpg')
 boardgame.photos.attach(io: file, filename: 'Yam.jpg', content_type: 'image/jpg')
 
 user = User.new(
@@ -106,7 +106,7 @@ boardgame = Boardgame.create!(
   price: 3,
   address: '35 Rue du Chevalier de la Barre, 75018 Paris',
   user: user)
-file = URI.open('https://www.jedisjeux.net/media/cache/full/uploads/img/p-1225.jpg')
+file = URI.open('https://www.label-emmaus.co/media/ext/540x540/d1kvfoyrif6wzg.cloudfront.net/assets/images/None/main/f38955c1395c42c6d354cf4778b7e84f_d535320.jpg')
 boardgame.photos.attach(io: file, filename: 'fantome_de_mcgregor.jpg', content_type: 'image/jpg')
 
 
@@ -127,7 +127,7 @@ boardgame = Boardgame.create!(
   price: 5,
   address: 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris',
   user: user)
-file = URI.open('https://images-na.ssl-images-amazon.com/images/I/91HgOtj94RL._AC_SY355_.jpg')
+file = URI.open('https://escaleajeux.fr/q/qchaw_01.jpg')
 boardgame.photos.attach(io: file, filename: 'question_pour_un_champion.jpg', content_type: 'image/jpg')
 
 
@@ -169,7 +169,7 @@ boardgame = Boardgame.create!(
   price: 7,
   address: '15 Rue de Vaugirard, 75291 Paris',
   user: user)
-file = URI.open('https://www.cdiscount.com/pdt2/e/0/1/1/700x700/asmave01/rw/les-aventuriers-du-rail-usa-jeu-de-societe.jpg')
+file = URI.open('https://images.oxybul.com/Photo/IMG_FICHE_PRODUIT/Image_C3/500x500/3/326801.jpg')
 boardgame.photos.attach(io: file, filename: 'les_aventuriers_du_rail.jpg', content_type: 'image/jpg')
 
 
@@ -211,7 +211,7 @@ boardgame = Boardgame.create!(
   price: 2,
   address: '8 Rue de Montpensier, 75001 Paris',
   user: user)
-file = URI.open('https://www.espritjeu.com/upload/image/blanc-manger-coco-p-image-65787-grande.jpg')
+file = URI.open('https://blancmangercoco.com/wp-content/uploads/2020/03/BlancMangerCoco-GaletteComplete-photo3-scaled.jpg')
 boardgame.photos.attach(io: file, filename: 'blanc_manger_coco.jpg', content_type: 'image/jpg')
 
 
@@ -232,7 +232,7 @@ boardgame = Boardgame.create!(
   price: 7,
   address: 'Avenue Winston Churchill, 75008 Paris',
   user: user)
-file = URI.open('https://www.espritjeu.com/upload/image/risk-nouvelle-edition-p-image-60507-grande.jpg')
+file = URI.open('https://i.blogs.es/250667/risk-hasbro/450_1000.jpeg')
 boardgame.photos.attach(io: file, filename: 'risk.jpg', content_type: 'image/jpg')
 
 
@@ -253,7 +253,7 @@ boardgame = Boardgame.create!(
   price: 7,
   address: 'Place de la Madeleine, 75008 Paris',
   user: user)
-file = URI.open('https://www.jouets-sajou.com/44302-large_default/monopoly-mauvais-perdants-jeu-de-societe-jeu-de-plateau-version-francaise.jpg')
+file = URI.open('https://images-na.ssl-images-amazon.com/images/I/81qy%2BMXuxDL._AC_SL1392_.jpg')
 boardgame.photos.attach(io: file, filename: 'monopoly.jpg', content_type: 'image/jpg')
 
 
@@ -274,7 +274,7 @@ boardgame = Boardgame.create!(
   price: 5,
   address: 'Place Charles de Gaulle, 75008 Paris',
   user: user)
-file = URI.open('https://cdn1.philibertnet.com/430012-large_default/dany.jpg')
+file = URI.open('https://www.vindjeu.eu/prd/wp-content/uploads/2019/04/2069-Dany-1.jpg')
 boardgame.photos.attach(io: file, filename: 'dany.jpg', content_type: 'image/jpg')
 
 
@@ -316,7 +316,7 @@ boardgame = Boardgame.create!(
   price: 7,
   address: '2 Rue Charles Nodier, 75018 Paris',
   user: user)
-file = URI.open('https://www.espritjeu.com/upload/image/cluedo-p-image-60570-grande.jpg')
+file = URI.open('https://cdn.akamai.steamstatic.com/steam/apps/794800/capsule_616x353.jpg?t=1610536248')
 boardgame.photos.attach(io: file, filename: 'cluedo.jpg', content_type: 'image/jpg')
 
 

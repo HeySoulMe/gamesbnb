@@ -3,9 +3,11 @@
 .main-container-index {
   background-color: white;
 }
+
 .index-title {
-  margin-left: 6px;
-  margin-bottom: 30px;
+  margin: 30px 0 40px 7px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
 }
 
 .cards-index {
@@ -29,7 +31,7 @@
   h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
   }
 	&:hover {
     box-shadow: 4px 6px 30px rgba(0, 0, 0, 0.4);

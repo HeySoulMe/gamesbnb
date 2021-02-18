@@ -1,9 +1,9 @@
 <div class="main-container-index container-xxl">
 	<div class="row">
 		<div class="col-6 m-4">
-			<h3 class="index-title row d-flex flex-column">
+			<h4 class="index-title">
 				Board games close to your localisation:
-			</h3>
+			</h4>
 			<div class="cards-index">
 				<% @boardgames.each do |boardgame| %>
 					<%= link_to boardgame_path(boardgame) do %>
