@@ -1,5 +1,5 @@
-require "faker"
 require 'date'
+require "faker"
 require "open-uri"
 
 
@@ -15,7 +15,7 @@ user1 = User.new(
   email: "edouard@park_easy.com",
   password: 123456
   )
-user.save!
+user1.save!
 
 boardgame1 = Boardgame.create!(
   name: 'Seven Wonders',
@@ -24,10 +24,11 @@ boardgame1 = Boardgame.create!(
   players: 4,
   price: 7,
   address: '55Bis Quai de Valmy, 75010 Paris',
-  user: user)
+  user: user1)
 file = URI.open('https://akoatujou.fr/wp-content/uploads/2019/04/7_Wonders-1200x800-c-default.png')
-boardgame.photos.attach(io: file, filename: 'sevenwonder.jpg', content_type: 'image/jpg')
+boardgame1.photos.attach(io: file, filename: 'sevenwonder.jpg', content_type: 'image/jpg')
 
+##
 user2 = User.new(
   username: "Test User 2nd",
   first_name: "Alexandra",
@@ -35,7 +36,7 @@ user2 = User.new(
   email: "alexandra@park_easy.com",
   password: 123456
   )
-user.save!
+user2.save!
 
 boardgame2 = Boardgame.create!(
   name: 'Tock',
@@ -44,10 +45,11 @@ boardgame2 = Boardgame.create!(
   players: 2,
   price: 5,
   address: '1 Avenue Claude Vellefaux, 75010 Paris',
-  user: user)
+  user: user2)
 file = URI.open('https://cf.geekdo-images.com/8a6_5jcQ7X46EIKFEeyW9g__opengraph_left/img/ymAfP59qzWdichydYUFMQ4G52GM=/fit-in/445x445/filters:strip_icc()/pic989128.jpg')
-boardgame.photos.attach(io: file, filename: 'tock.jpg', content_type: 'image/jpg')
+boardgame2.photos.attach(io: file, filename: 'tock.jpg', content_type: 'image/jpg')
 
+##
 user3 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
@@ -55,335 +57,338 @@ user3 = User.new(
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user3.save!
 
 boardgame3 = Boardgame.create!(
   name: 'Perudo',
-  description: 'A terrible game',
+  description: 'This game can be played by two or more players and consists of guessing how many dice, placed under cups, there are on the table showing a certain number. The player who loses a round loses one of their dice. The last player to still have dice is the winner.',
   category: 'Dices',
   players: 3,
   price: 3,
   address: '8 Rue Léon Schwartzenberg, 75010 Paris',
-  user: user)
+  user: user3)
 file = URI.open('https://m.media-amazon.com/images/S/aplus-media/vc/33305101-d370-4de8-9f15-1e231e560dc4.__CR0,0,970,600_PT0_SX970_V1___.png')
-boardgame.photos.attach(io: file, filename: 'perudo.png', content_type: 'image/png')
+boardgame3.photos.attach(io: file, filename: 'perudo.png', content_type: 'image/png')
 
-user = User.new(
+##
+user4 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user4.save!
 
-boardgame = Boardgame.create!(
+boardgame4 = Boardgame.create!(
   name: 'Catan',
-  description: 'What a great game! 100% would play again',
+  description: 'Players build settlements, cities, and roads to connect them as they settle the island.',
   category: 'Resources management',
   players: 3,
   price: 6,
   address: '77 Rue de Varenne, 75007 Paris',
-  user: user)
+  user: user4)
 file = URI.open('https://steamcdn-a.akamaihd.net/steam/apps/544730/capsule_616x353.jpg?t=1572340135')
-boardgame.photos.attach(io: file, filename: 'catan.jpg', content_type: 'image/jpg')
+boardgame4.photos.attach(io: file, filename: 'catan.jpg', content_type: 'image/jpg')
 
-user = User.new(
+##
+user5 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user5.save!
 
-boardgame = Boardgame.create!(
+boardgame5 = Boardgame.create!(
   name: 'Yaams',
-  description: 'I got so lucky game',
+  description: 'Try to gain the maximum amount of points by getting multiple high value combinations!',
   category: 'Dices',
   players: 2,
   price: 3,
   address: '47 Rue des Couronnes, 75020 Paris',
-  user: user)
+  user: user5)
 file = URI.open('https://static.fnac-static.com/multimedia/Images/FR/MDM/c1/29/38/3680705/1505-1/tsp20210205091935/Dujardin-Serie-Noire-Yam-421.jpg')
-boardgame.photos.attach(io: file, filename: 'Yam.jpg', content_type: 'image/jpg')
+boardgame5.photos.attach(io: file, filename: 'Yam.jpg', content_type: 'image/jpg')
 
-user = User.new(
+##
+user6 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user6.save!
 
-
-boardgame = Boardgame.create!(
+boardgame6 = Boardgame.create!(
   name: 'Le fantôme de McGregor',
-  description: 'Nice to play with my children',
+  description: "try to escape from McGregor's castle without getting caught by the ghost! First one out wins!",
   category: 'Kids',
   players: 3,
   price: 3,
   address: '35 Rue du Chevalier de la Barre, 75018 Paris',
-  user: user)
+  user: user6)
 file = URI.open('https://www.label-emmaus.co/media/ext/540x540/d1kvfoyrif6wzg.cloudfront.net/assets/images/None/main/f38955c1395c42c6d354cf4778b7e84f_d535320.jpg')
-boardgame.photos.attach(io: file, filename: 'fantome_de_mcgregor.jpg', content_type: 'image/jpg')
+boardgame6.photos.attach(io: file, filename: 'fantome_de_mcgregor.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user7 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user7.save!
 
-boardgame = Boardgame.create!(
+boardgame7 = Boardgame.create!(
   name: 'Questions pour un champion',
-  description: 'Difficult especially if you are not french',
+  description: 'Answer correctly and faster than the other participants and become the new champion!',
   category: 'TV game',
   players: 2,
   price: 5,
   address: 'Champ de Mars, 5 Avenue Anatole France, 75007 Paris',
-  user: user)
+  user: user7)
 file = URI.open('https://escaleajeux.fr/q/qchaw_01.jpg')
-boardgame.photos.attach(io: file, filename: 'question_pour_un_champion.jpg', content_type: 'image/jpg')
+boardgame7.photos.attach(io: file, filename: 'question_pour_un_champion.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user8 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user8.save!
 
-boardgame = Boardgame.create!(
+boardgame8 = Boardgame.create!(
   name: 'Uno',
-  description: 'Very fun, boom +4 for you!',
+  description: "Get rid of all your cards before everyone else! Don't forget to say Uno!",
   category: 'Card game',
   players: 2,
   price: 2,
   address: '6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris',
-  user: user)
+  user: user8)
 file = URI.open('https://image.api.playstation.com/cdn/UP0001/CUSA04071_00/EXPdKW5X20Bn8pHmpRm5S9x3nWJM0PCe.png')
-boardgame.photos.attach(io: file, filename: 'uno.png', content_type: 'image/png')
+boardgame8.photos.attach(io: file, filename: 'uno.png', content_type: 'image/png')
 
-
-user = User.new(
+##
+user9 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user9.save!
 
-boardgame = Boardgame.create!(
+boardgame9 = Boardgame.create!(
   name: 'Les aventuriers du rail',
-  description: 'I lost a friend after playing this game',
+  description: 'Reach your destinations and disrupt other players from achieving their goals!',
   category: 'Resources management',
   players: 4,
   price: 7,
   address: '15 Rue de Vaugirard, 75291 Paris',
-  user: user)
+  user: user9)
 file = URI.open('https://images.oxybul.com/Photo/IMG_FICHE_PRODUIT/Image_C3/500x500/3/326801.jpg')
-boardgame.photos.attach(io: file, filename: 'les_aventuriers_du_rail.jpg', content_type: 'image/jpg')
+boardgame9.photos.attach(io: file, filename: 'les_aventuriers_du_rail.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user10 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user10.save!
 
-boardgame = Boardgame.create!(
+boardgame10 = Boardgame.create!(
   name: 'Pictionary',
-  description: 'A nice game, too bad i can not draw properly',
+  description: 'One person draws and other players try to guess what is being drawn',
   category: 'Drawings',
-  players: 2,
+  players: 4,
   price: 8,
   address: 'Place du Panthéon, 75005 Paris',
-  user: user)
+  user: user10)
 file = URI.open('https://www.rueducommerce.fr/medias/a72c3125fb76397293ba77705c85d94b/p_1000x1000/0887961236101-dkd50-6.jpg')
-boardgame.photos.attach(io: file, filename: 'pictionary.jpg', content_type: 'image/jpg')
+boardgame10.photos.attach(io: file, filename: 'pictionary.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user11 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user11.save!
 
-boardgame = Boardgame.create!(
+boardgame11 = Boardgame.create!(
   name: 'Blanc manger coco',
-  description: 'Awkward! I will not play with my mother in law anymore',
+  description: 'Make funny sentences with the cards you drew, the funiest win!',
   category: 'Card game',
   players: 3,
   price: 2,
   address: '8 Rue de Montpensier, 75001 Paris',
-  user: user)
+  user: user11)
 file = URI.open('https://blancmangercoco.com/wp-content/uploads/2020/03/BlancMangerCoco-GaletteComplete-photo3-scaled.jpg')
-boardgame.photos.attach(io: file, filename: 'blanc_manger_coco.jpg', content_type: 'image/jpg')
+boardgame11.photos.attach(io: file, filename: 'blanc_manger_coco.jpg', content_type: 'image/jpg')
 
 
-user = User.new(
+##
+user12 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user12.save!
 
-boardgame = Boardgame.create!(
+boardgame12 = Boardgame.create!(
   name: 'Risk',
-  description: 'Very long game...',
+  description: "Conquer the world and triomph from your ennemies with warchief's like strategies",
   category: 'TotalWar',
   players: 4,
   price: 7,
   address: 'Avenue Winston Churchill, 75008 Paris',
-  user: user)
+  user: user12)
 file = URI.open('https://i.blogs.es/250667/risk-hasbro/450_1000.jpeg')
-boardgame.photos.attach(io: file, filename: 'risk.jpg', content_type: 'image/jpg')
+boardgame12.photos.attach(io: file, filename: 'risk.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user13 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user13.save!
 
-boardgame = Boardgame.create!(
+boardgame13 = Boardgame.create!(
   name: 'Monopoly',
-  description: 'I went from rich to very poor and I blame the game for that',
+  description: 'Earn the maximum amount of cash and make other players go bankrupt!',
   category: 'Resources management',
   players: 3,
   price: 7,
   address: 'Place de la Madeleine, 75008 Paris',
-  user: user)
+  user: user13)
 file = URI.open('https://images-na.ssl-images-amazon.com/images/I/81qy%2BMXuxDL._AC_SL1392_.jpg')
-boardgame.photos.attach(io: file, filename: 'monopoly.jpg', content_type: 'image/jpg')
+boardgame13.photos.attach(io: file, filename: 'monopoly.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user14 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user14.save!
 
-boardgame = Boardgame.create!(
+boardgame14 = Boardgame.create!(
   name: 'Dany',
-  description: 'A nice discovery, did not know about this masterpiece',
+  description: "Try to guess what other players are planning and don't get caught while doing so!",
   category: 'Guesser',
   players: 4,
   price: 5,
   address: 'Place Charles de Gaulle, 75008 Paris',
-  user: user)
+  user: user14)
 file = URI.open('https://www.vindjeu.eu/prd/wp-content/uploads/2019/04/2069-Dany-1.jpg')
-boardgame.photos.attach(io: file, filename: 'dany.jpg', content_type: 'image/jpg')
+boardgame14.photos.attach(io: file, filename: 'dany.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user15 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user15.save!
 
-boardgame = Boardgame.create!(
+boardgame15 = Boardgame.create!(
   name: 'La route des épices',
-  description: 'Very cool, it is a french version',
+  description: 'Decide on the resources you wish to gather among your journey and achieve glory and fame through business deals',
   category: 'Resources management',
   players: 4,
   price: 4,
   address: '16 Rue Chaptal, 75009 Paris',
-  user: user)
+  user: user15)
 file = URI.open('https://escaleajeux.fr/r/r_epi_02.jpg')
-boardgame.photos.attach(io: file, filename: 'la_route_des_epices.jpg', content_type: 'image/jpg')
+boardgame15.photos.attach(io: file, filename: 'la_route_des_epices.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user16 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user16.save!
 
-boardgame = Boardgame.create!(
+boardgame16 = Boardgame.create!(
   name: 'Cluedo',
-  description: 'Loved it!',
+  description: 'Find clues and traces of the murderer and reveal the impostor among the guests',
   category: 'Guesser',
   players: 3,
   price: 7,
   address: '2 Rue Charles Nodier, 75018 Paris',
-  user: user)
+  user: user16)
 file = URI.open('https://cdn.akamai.steamstatic.com/steam/apps/794800/capsule_616x353.jpg?t=1610536248')
-boardgame.photos.attach(io: file, filename: 'cluedo.jpg', content_type: 'image/jpg')
+boardgame16.photos.attach(io: file, filename: 'cluedo.jpg', content_type: 'image/jpg')
 
-
-user = User.new(
+##
+user17 = User.new(
   username: Faker::Internet.username,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   email: Faker::Internet.email,
   password: 123456
   )
-user.save!
+user17.save!
 
-boardgame = Boardgame.create!(
+boardgame17 = Boardgame.create!(
   name: 'Puissance 4',
-  description: 'Too short',
+  description: 'Get four of your coins in line first and humiliate your opponent',
   category: 'Strategy',
   players: 2,
   price: 4,
   address: '152 Boulevard de la Villette, 75019 Paris',
-  user: user)
+  user: user17)
 file = URI.open('https://www.espritjeu.com/upload/image/puissance-4-p-image-71452-grande.jpg')
-boardgame.photos.attach(io: file, filename: 'puissance_quatro.jpg', content_type: 'image/jpg')
+boardgame17.photos.attach(io: file, filename: 'puissance_quatro.jpg', content_type: 'image/jpg')
 
 # bookings see
 
-# Booking.create!(
-#   start_at: DateTime.strptime("01/01/2021 12:00", "%m/%d/%Y %H:%M"),
-#   end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
-#   user: User.find(1),
-#   boardgame: Boardgame.find(15)
-#   )
+Booking.create!(
+  start_at: DateTime.strptime("01/01/2021 12:00", "%m/%d/%Y %H:%M"),
+  end_at: DateTime.strptime("01/31/2021 12:00", "%m/%d/%Y %H:%M"),
+  user: user1,
+  boardgame: boardgame17
+  )
 
-# # ###
+# ###
 
-# Booking.create!(
-#   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
-#   end_at: DateTime.strptime("02/27/2021 17:00", "%m/%d/%Y %H:%M"),
-#   user: User.find(2),
-#   boardgame: Boardgame.find(14)
-#   )
+Booking.create!(
+  start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
+  end_at: DateTime.strptime("02/27/2021 17:00", "%m/%d/%Y %H:%M"),
+  user: user2,
+  boardgame: boardgame16
+  )
 
-# # ###
+# ###
 
-# Booking.create!(
-#   start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
-#   end_at: DateTime.strptime("03/02/2021 14:00", "%m/%d/%Y %H:%M"),
-#   user: User.find(3),
-#   boardgame: Boardgame.find(13)
-#   )
+Booking.create!(
+  start_at: Faker::Date.between(from: 10.days.ago, to: Date.today),
+  end_at: DateTime.strptime("03/02/2021 14:00", "%m/%d/%Y %H:%M"),
+  user: user3,
+  boardgame: boardgame3
+  )
 
