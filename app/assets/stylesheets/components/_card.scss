@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
 
 .main-container-index {
-  background-color: white;
+  background-color: #F6F9FC;
 }
 
 .index-title {
@@ -71,4 +71,9 @@
   color: white;
   opacity: 0.8;
 }
+
+.highlight {
+    box-shadow: 4px 6px 30px rgba(0, 0, 0, 0.4);
+    opacity: 1.5;
+  }
 
