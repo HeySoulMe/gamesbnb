@@ -1,53 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+.main-container-index {
+  background-color: white;
+}
+
+.index-title {
+  margin: 30px 0 40px 7px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+}
+
+.cards-index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .card-index {
+  font-family: 'Roboto', sans-serif;
   color: black;
 	background-color: white;
-	border-radius: 14px;
-	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.7);
-  margin-bottom: 15px;
-  margin-left: 20px;
+	border-radius: 8px;
+	box-shadow: 3px 3px 30px rgba(0, 0, 0, 0.2);
   margin-bottom: 15px;
 	transition: all ease 0.3s;
 	cursor: pointer;
 	overflow: hidden;
-	opacity: 0.95;
+  width: 332px;
+  height: 362px;
+  h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+  }
 	&:hover {
-    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: 4px 6px 30px rgba(0, 0, 0, 0.4);
 		opacity: 1.5;
-		.players {
-			box-shadow: 3px 3px 3px rgba(0, 0, 0, 1);
-		}
 	}
 }
 
 .description {
-	width: 100%;
+  height: 33%;
+  margin: 16px 24px 0px 24px;
   position: relative;
-  padding: 10px;
-  .description-content {
-  	padding-left: 18px;
-  }
   .description-category {
-    padding-left: 18px;
-    font-weight: bold;
-    margin-top: 5px;
+    color: #868686;
+    font-weight: 500;
+    font-size: 13px;
   }
 }
 
 .players {
+  font-size: 15px;
   position: absolute;
-  border-radius: 50%;
-  padding: 12px 8px;
-  bottom: 78px;
-  right: 11px;
+  bottom: 28px;
+  right: 253px;
   background-color: white;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
   transition: all ease 0.4s;
 }
 
 .price {
+  border-radius: 8px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   position: absolute;
-  bottom: 14px;
-  right: 14px;
-  font-size: 18px;
+  font-size: 16px;
+  right: -13px;
+  bottom: 21px;
+  background-color: #337AB7;
+  padding: 4px 11px;
+  color: white;
+  opacity: 0.8;
 }
 

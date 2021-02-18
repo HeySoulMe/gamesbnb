@@ -1,23 +1,21 @@
-<div class="container-xxl">
+<div class="main-container-index container-xxl">
 	<div class="row">
 		<div class="col-6 m-4">
-			<h3 class="row d-flex flex-column mb-4">
-				Boardgames close to you:
-			</h3>
+			<h4 class="index-title">
+				Board games close to your localisation:
+			</h4>
 			<div class="cards-index">
 				<% @boardgames.each do |boardgame| %>
 					<%= link_to boardgame_path(boardgame) do %>
-						<div class="card-index d-flex">
-							<% if boardgame.photos.attached? %>
-							  <%= cl_image_tag boardgame.photos.first.key, width: 160, height: 160, crop: :fill, radius: 24, padding: 22 %>
-							<% end %>
-							<div class="description text-center">
+						<div class="card-index">
+								<% if boardgame.photos.attached? %>
+								  <%= cl_image_tag boardgame.photos.first.key, crop: :fill, width: 332, height: 236 %>
+								<% end %>
+							<div class="description">
+								<p class="description-category"><%= boardgame.category.upcase! %></p>
 								<h4><%= boardgame.name %></h4>
-								<hr>
-								<p class="description-content text-left"><%= boardgame.description.truncate_words(12) %></p>
-								<p class="description-category text-left"><%= boardgame.category %></p>
 								<p class="players"><%= boardgame.players %> <i class="fas fa-user-friends"></i></p>
-								<p class="price"><strong><%= boardgame.price.to_i %>€</strong> / day</p>
+								<p class="price"><strong><%= boardgame.price.to_i %> €</strong> / day</p>
 							</div>
 						</div>
 					<% end %>
