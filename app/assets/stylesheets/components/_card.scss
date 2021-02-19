@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
 
 .row-home {
-  margin-left: 200px;
   margin-top: 225px;
 }
 
@@ -21,13 +20,25 @@
 }
 
 .h1-home-2 {
-  margin-left: 100px;
   color: antiquewhite;
   margin-top: 20px;
   align-items: center;
   transform: translateY(15px);
   transform: translateX(400px);
- }
+}
+
+.cards-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cards-home-category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
 .index-title {
   margin: 30px 0 40px 7px;
   font-family: 'Roboto', sans-serif;
@@ -40,17 +51,6 @@
   grid-gap: 16px;
 }
 
-.cards-home {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
-
-.cards-home-category {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
 
 .card-index {
   font-family: 'Roboto', sans-serif;
