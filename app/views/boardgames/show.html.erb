@@ -11,10 +11,15 @@
         <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name} - #{@boardgame.address}" %>
       </div>
       <div class="picture-descr-show-card">
-        <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
-        <br>
-        <h3>A little bit more about this boardgame ...</h3>
-        <p><%= @boardgame.description %></p>
+        <div class="content-show d-flex">
+          <div class="photo-pr-show">
+            <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
+          </div>
+          <div class="text-pr-show">
+            <h5>A little bit more about this boardgame ...</h5>
+            <p><%= @boardgame.description %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-4-show">
@@ -28,14 +33,16 @@
         <%= "#{@boardgame.players}" %> <i class="fas fa-user-friends"></i>
         </div>
         <div class="share-show-card">
-        <h4>Share it !</h4>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+          <h4>Share it !</h4>
+          <div class="show-links">
+          <a href="#" ><i class="fab fa-instagram fa-2x mr-2"></i></a>
+          <a href="#" ><i class="fab fa-facebook fa-2x mr-2"></i></a>
+          <a href="#" ><i class="fab fa-twitter fa-2x mr-2"></i></a>
+          </div>
         </div>
       </div>
     </div>
+    <%= link_to "Back to the List", boardgames_path %>
   </div>
-  <%= link_to "Back to the Boardgames List", boardgames_path %>
 </div>
 
