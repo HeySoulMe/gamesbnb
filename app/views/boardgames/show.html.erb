@@ -16,7 +16,7 @@
             <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
           </div>
           <div class="text-pr-show">
-            <h5>A little bit more about this boardgame ...</h5>
+            <h5>A bit more about this boardgame ...</h5>
             <p><%= @boardgame.description %></p>
           </div>
         </div>
@@ -42,7 +42,7 @@
         </div>
       </div>
     </div>
-    <%= link_to "Back to the List", boardgames_path %>
+    <%= link_to ('<i class="fas fa-arrow-circle-left style="color:black !important"></i>').html_safe, boardgames_path %>
   </div>
 </div>
 
