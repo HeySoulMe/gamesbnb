@@ -3,6 +3,7 @@ const tabsDashboard = () => {
 	const tabs = document.querySelectorAll(".tab-underlined");
 	tabs.forEach((clickedTab) => {
   		clickedTab.addEventListener('click', (event) => {
+        event.preventDefault();
         tabs.forEach((tab) => { tab.classList.remove("active")})
   			clickedTab.classList.toggle("active");
         const divCards = document.querySelectorAll(".div-cards");
