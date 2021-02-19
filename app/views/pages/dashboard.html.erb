@@ -41,10 +41,10 @@
             </div>
             <div class="actions-dashboard d-flex justify-content-around">
               <div class="accept-btn text-center">
-                <p><%= link_to "Accept", accept_booking_path(booking) %></p>
+                <p><%= link_to "Accept", accept_booking_path(booking), method: :patch %></p>
               </div>
                 <div class="delete-btn text-center">
-                  <p><%= link_to "Decline", decline_booking_path(booking) %></p>
+                  <p><%= link_to "Decline", decline_booking_path(booking), method: :patch %></p>
                 </div>
             </div>
           </div>
