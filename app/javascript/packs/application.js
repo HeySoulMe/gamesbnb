@@ -29,10 +29,10 @@ import "bootstrap";
 // Import "plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
 
-
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { flatpicker } from '../plugins/flatpickr';
+import { tabsDashboard } from '../components/tabs_dashboard';
 
 // Needed for mapbox
 
@@ -41,6 +41,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   flatpicker();
   initMapbox();
-  // acceptBooking();
+  tabsDashboard();
 });
 
