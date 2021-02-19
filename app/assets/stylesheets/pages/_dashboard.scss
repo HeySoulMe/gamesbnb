@@ -17,3 +17,76 @@
   opacity: 1;
   border-bottom: 3px solid #555555;
 }
+
+
+
+/////////////////////////////
+
+.img-circle-card {
+  width: 88px;
+}
+
+.card-dashboard {
+  background-color: white;
+  margin-bottom: 15px;
+  width: 700px;
+  border-radius: 12px;
+  box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all ease 0.4s;
+  cursor: pointer;
+  &:hover {
+    box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.4);
+  }
+}
+
+.description-dashboard {
+  width: 50%;
+  margin-left: 25px;
+  margin-bottom: -8px;
+  .title {
+    margin-bottom: 4px;
+  }
+  #title-your-bookings {
+    margin-top: 4px;
+  }
+  .price-your-bookings {
+    margin-top: 0px;
+  }
+}
+
+.description-yourbooking-dashboard {
+  width: 50%;
+  margin-left: 25px;
+  .title {
+    margin-bottom: 4px;
+  }
+  #title-your-bookings {
+    margin-top: 4px;
+  }
+  .price-your-bookings {
+    margin-top: 0px;
+  }
+  .date-your-bookings {
+    margin-bottom: 3px;
+  }
+}
+
+.actions-dashboard {
+  width: 32%;
+  margin-bottom: -16px;
+  color: grey;
+  .show-btn:hover {
+    color: black;
+  }
+  .edit-btn:hover {
+    color: black;
+  }
+  .delete-btn:hover {
+    color: black;
+  }
+}
+
+.date-your-bookings {
+  color: grey;
+  font-size: 14px;
+}
