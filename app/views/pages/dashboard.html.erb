@@ -40,18 +40,22 @@
               <p class="date-your-bookings">From:<strong> <%= booking.start_at.day %> / <%= booking.start_at.month %> / <%= booking.start_at.year %></strong> to:<strong> <%= booking.end_at.day %> / <%= booking.end_at.month %> / <%= booking.end_at.year %> </strong></p>
             </div>
             <div class="actions-dashboard d-flex justify-content-around">
-              <div class="accept-btn text-center">
-                <p><%= link_to "Accept", accept_booking_path(booking), method: :patch %></p>
-              </div>
+              <% if booking.status == "pending" %>
+                <div class="accept-btn text-center">
+                  <p><%= link_to "Accept", accept_booking_path(booking), method: :patch %></p>
+                </div>
                 <div class="delete-btn text-center">
                   <p><%= link_to "Decline", decline_booking_path(booking), method: :patch %></p>
                 </div>
+              <% else %>
+                <%= booking.status %>
+              <% end %>
             </div>
           </div>
       <% end %>
     </div>
 
-    
+
     <div class = "div-cards d-none" data-content-id="boardgames-tab">
      <% @my_boardgames.each do |boardgame| %>
             <div class="card-dashboard d-flex align-items-center" data-content-id="requests-tab">
