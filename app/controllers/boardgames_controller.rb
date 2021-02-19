@@ -11,6 +11,12 @@ class BoardgamesController < ApplicationController
       id: boardgame.id
     }
     end
+
+    if params[:query].present?
+      @boardgames = Boardgame.where("name ILIKE ?", "%#{params[:query]}%")
+    else
+      @boardgames = Boardgame.all
+    end
   end
 
   def show

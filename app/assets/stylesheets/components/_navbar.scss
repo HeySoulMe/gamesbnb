@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: #0A2540;
   color:white;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -24,7 +25,12 @@
 }
 
 .avatar {
-  width: 40px;
+  width: 50px;
   border-radius: 50%;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

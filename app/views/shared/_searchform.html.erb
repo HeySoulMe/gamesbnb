@@ -1,0 +1,8 @@
+<%= form_tag boardgames_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control mr-sm-2",
+      placeholder: "Find a Boardgame"
+    %>
+    <%= submit_tag "Search", class: "btn btn-outline-secondary my-2 my-sm-0 ml-2" %>
+  <% end %>
