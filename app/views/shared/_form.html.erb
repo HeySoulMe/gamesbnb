@@ -1,5 +1,5 @@
-<%= simple_form_for [@boardgame, @booking] do |f| %>
-	<%= f.input :start_at, as: :string, input_html: { id: "start_at" }%>
-	<%= f.input :end_at, as: :string, input_html: { id: "end_at" } %>
-	<%= f.button :submit, "Book !", class: "btn btn-primary"%>
+<%= simple_form_for [@boardgame, @booking], wrapper: :input_group do |f| %>
+	<%= f.input :start_at, as: :string, label: false, prepend: "From:", input_html: { id: "start_at" }%>
+	<%= f.input :end_at, as: :string, label: false, prepend: "to:", input_html: { id: "end_at" } %>
+	<%= f.button :submit, "Book !", class: "btn btn-primary", style: "width:100%" %>
 	<% end %>

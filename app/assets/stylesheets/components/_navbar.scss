@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: #0A2540;
   color:white;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -28,3 +29,8 @@
   border-radius: 50%;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
