@@ -11,10 +11,15 @@
         <%= "#{@boardgame.user.first_name} "" #{@boardgame.user.last_name} - #{@boardgame.address}" %>
       </div>
       <div class="picture-descr-show-card">
-        <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
-        <br>
-        <h3>A little bit more about this boardgame ...</h3>
-        <p><%= @boardgame.description %></p>
+        <div class="content-show d-flex">
+          <div class="photo-pr-show">
+            <%= cl_image_tag @boardgame.photos.first.key, width:300 , height:300, crop: :fill %>
+          </div>
+          <div class="text-pr-show">
+            <h5>A little bit more about this boardgame ...</h5>
+            <p><%= @boardgame.description %></p>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-4-show">
