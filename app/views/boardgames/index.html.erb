@@ -8,9 +8,7 @@
 				<% @boardgames.each do |boardgame| %>
 					<%= link_to boardgame_path(boardgame) do %>
 						<div class="card-index" data-boardgame-id="<%= boardgame.id %>">
-								<% if boardgame.photos.attached? %>
-								  <%= cl_image_tag boardgame.photos.first.key, crop: :fill, width: 332, height: 236 %>
-								<% end %>
+							<%= cl_image_tag boardgame.photos.first.key, crop: :fill, width: 332, height: 236 %>
 							<div class="description">
 								<p class="description-category"><%= boardgame.category.upcase! %></p>
 								<h4><%= boardgame.name %></h4>
