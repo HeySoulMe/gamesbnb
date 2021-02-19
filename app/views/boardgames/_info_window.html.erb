@@ -1,7 +1,7 @@
 <div class="mapbox-popup-container d-flex">
 	<%= cl_image_tag boardgame.photos.first.key, crop: :fill, width: 85, height: 85 %>
-	<div class="ml-2">
-		<h4><%= link_to boardgame.name, boardgame_path(boardgame) %></h4>
+	<div class="popup-description-container">
+		<%= link_to boardgame.name, boardgame_path(boardgame), class: "title-popup-mapbox" %>
 		<p><%= boardgame.address %></p>
 	</div>
 </div>
