@@ -8,7 +8,7 @@
   transition: all ease 0.4s;
 }
 .picture-descr-show-card {
-  background-color: #F8F9FA;
+  background-color: white;
   padding: 15px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -24,7 +24,7 @@ h4 {
 .game-show-title-card{
   padding: 15px;
   margin-bottom: 15px;
-  background-color: #F8F9FA;
+  background-color: white;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
   width: 600px;
 }
@@ -32,19 +32,25 @@ h4 {
 .booking-show-card {
   padding: 15px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  background-color: #F8F9FA;
+  background-color: white;
   margin-bottom: 15px;
 }
 
 .price-card-show {
   padding: 15px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  background-color:#F8F9FA;
+  background-color:white;
   margin-bottom: 15px;
 }
 
-.owner-show-card{
+.share-show-card {
   padding: 15px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-  background-color: #F8F9FA;
+  background-color: white;
+  color: black; 
+}
+
+.mapshow {
+  z-index: -1;
+  position: relative;
 }
