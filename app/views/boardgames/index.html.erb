@@ -4,6 +4,9 @@
 			<h4 class="index-title">
 				Board games close to your localisation:
 			</h4>
+			<% if @boardgames.count == 0 || nil %>
+				<%= "No match found" %>
+				<% end %>
 			<div class="cards-index">
 				<% @boardgames.each do |boardgame| %>
 					<%= link_to boardgame_path(boardgame) do %>
