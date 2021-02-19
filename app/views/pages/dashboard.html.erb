@@ -1,45 +1,87 @@
-
 <div class="container">
-    <div>
-          <ul class="list-inline tabs-underlined">
-        <li>
-          <a href="#" class="tab-underlined active" id="bookings-tab">My Bookings</a>
-        </li>
-        <li>
-          <a href="#" class="tab-underlined" id="boardgames-tab">My Boardgames</a>
-        </li>
-        <li>
-          <a href="#" class="tab-underlined" id="requests-tab">Requests</a>
-        </li>
-      </ul>
+  <div>
+        <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="#" class="tab-underlined active" id="bookings-tab">My Bookings</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined" id="boardgames-tab">My Boardgames</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined" id="requests-tab">Requests</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="cards-dashboard d-flex flex-column align-items-center mt-4" >
+    <div class = "div-cards" data-content-id="bookings-tab">
+      <% @bookings.each do |booking| %>
+          <div class="card-dashboard d-flex align-items-center" data-content-id="bookings-tab">
+            <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
+            <div class="description-yourbooking-dashboard text-left">
+              <p class="title" id="title-your-bookings"><strong><%= booking.boardgame.name %></strong></p>
+              <p class="date-your-bookings">From:<strong> <%= booking.start_at.day %> / <%= booking.start_at.month %> / <%= booking.start_at.year %></strong> to:<strong> <%= booking.end_at.day %> / <%= booking.end_at.month %> / <%= booking.end_at.year %> </strong></p>
+            </div>
+            <div class="actions-dashboard d-flex justify-content-around">
+              <div class="pending-msg text-center">
+                <p> <%= booking.status %> </p>
+              </div>
+            </div>
+          </div>
+      <% end %>
     </div>
-      <div class="cards-dashboard" >
-        <% @bookings.each do |booking| %>
-            <div class="card-dashboard d-flex align-items-center" data-content-id="bookings-tab">
-              <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
+
+    <div class = "div-cards d-none" data-content-id="requests-tab">
+      <% @bookings_as_owner.each do |booking| %>
+          <div class="card-dashboard d-flex align-items-center" data-content-id="">
+            <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
+            <div class="description-yourbooking-dashboard text-left">
+              <p class="title" id="title-your-bookings"><%= booking.boardgame.name %></p>
+              <p class="date-your-bookings">From:<strong> <%= booking.start_at.day %> / <%= booking.start_at.month %> / <%= booking.start_at.year %></strong> to:<strong> <%= booking.end_at.day %> / <%= booking.end_at.month %> / <%= booking.end_at.year %> </strong></p>
+            </div>
+            <div class="actions-dashboard d-flex justify-content-around">
+              <div class="accept-btn text-center">
+                <p><%= link_to "Accept", accept_booking_path(booking), method: :patch %></p>
+              </div>
+                <div class="delete-btn text-center">
+                  <p><%= link_to "Decline", decline_booking_path(booking), method: :patch %></p>
+                </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+
+    
+    <div class = "div-cards d-none" data-content-id="boardgames-tab">
+     <% @my_boardgames.each do |boardgame| %>
+            <div class="card-dashboard d-flex align-items-center" data-content-id="requests-tab">
+              <%= cl_image_tag boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
               <div class="description-yourbooking-dashboard text-left">
-                <p class="title" id="title-your-bookings"><strong><%= booking.boardgame.name %></strong></p>
-                <p class="date-your-bookings">From <%= booking.start_at.day %> / <%= booking.start_at.month %> / <%= booking.start_at.year %> </p>
-                <p class="price-your-bookings"><%= booking.boardgame.price.to_i %>€ / day</p>
+                <p class="title" id="title-your-bookings"><%= boardgame.name %></p>
               </div>
               <div class="actions-dashboard d-flex justify-content-around">
-                <div class="pending-msg text-center">
-                  <p> <%= booking.status %> </p>
+                <div class="boardgame-btns text-center">
+                  <%= link_to boardgame_path(boardgame) do %>
+                    <i class="fas fa-search"></i>
+                    <p>Show</p>
+                  <% end %>
+                </div>
+                <div class="boardgame-btns text-center">
+                  <%= link_to boardgame_path(boardgame) do %>
+                    <i class="fas fa-search"></i>
+                    <p>Edit</p>
+                  <% end %>
+                </div>
+                <div class="boardgame-btns text-center">
+                  <%= link_to boardgame_path(boardgame), method: :delete, data: { confirm: "Are you sure?"} do %>
+                    <i class="far fa-trash-alt"></i>
+                    <p>Delete</p>
+                  <% end %>
                 </div>
               </div>
             </div>
         <% end %>
-      </div>
-    
-    <div class="cards-dashboard">
-    <% @bookings_as_owner.each do |booking| %>
-        <div class="card-dashboard d-flex align-items-center d-none" data-content-id="requests-tab">
-          <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
-          <div class="description-yourbooking-dashboard text-left">
-            <p class="title" id="title-your-bookings"><%= booking.boardgame.name %></p>
-          </div>
-        </div>
-    <% end %>
+    </div>
   </div>
 </div>
 
