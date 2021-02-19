@@ -2,15 +2,32 @@
 
 .row-home {
   margin-left: 200px;
+  margin-top: 225px;
+}
+
+.row-home-2 {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  padding-left: 100px;
+  margin-top: 10px;
+  max-height: 320px;
+  margin-bottom: 150px;
 }
 
 .h1-home {
  margin-top: 20px;
  align-items: center;
  transform: translateY(15px);
- transform: translateX(-100px);
+ transform: translateX(300px);
 }
 
+.h1-home-2 {
+  margin-left: 100px;
+  color: antiquewhite;
+  margin-top: 20px;
+  align-items: center;
+  transform: translateY(15px);
+  transform: translateX(400px);
+ }
 .index-title {
   margin: 30px 0 40px 7px;
   font-family: 'Roboto', sans-serif;
@@ -19,13 +36,19 @@
 
 .cards-index {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 16px;
 }
 
 .cards-home {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+}
+
+.cards-home-category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
 

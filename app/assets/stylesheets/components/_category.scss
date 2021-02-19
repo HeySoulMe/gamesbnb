@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=El+Messiri');
+
+html {
+  box-sizing: border-box;
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: inherit;
+  }
+}
+
+.card-category {
+  border-radius: 18px;
+  height: 300px;
+  width: 280px;
+  position: relative;
+  max-width: 26.5em;
+  margin: 2rem auto;
+  padding: 2em;
+  background: #e2e2ec;
+}
+
+.card__title {
+  margin: 0 auto 1em;
+  color: rgb(27, 22, 22);
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.card__img-1 {
+  display: block;
+  width: 20em;
+  max-width: 100%;
+  max-height: 130px;
+  margin: 1em auto;
+  border-radius: 5px;
+}
+
+.card__btn {
+  border-radius: 10px;
+  display: table;
+  padding: .7em 4em;
+  background: #102236;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 1em auto 0;
+}
+
+
+
+
+/**
+ * Card #15
+ */
+
+.card--15 {
+
+  overflow: hidden;
+  transition: all .3s;
+
+  .card__text,
+  .card__title,
+  .card__btn,
+  .card__img-1 {
+    transition: all .3s ease-in-out;
+  }
+
+  &:hover {
+    background-color: transparent;
+    background-image: url(https://images.unsplash.com/photo-1592780830338-19ec1f224c44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+    background-size: cover, 10% 10%;
+    background-position: center;
+    background-blend-mode: overlay;
+
+    .card__title {
+      color: #fff;
+      transform: translate3d(0,20px,0) scale(1.5);
+    }
+
+
+    .card__img-1 {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    .card__btn {
+      transform: translate3d(0,-20px,0);
+    }
+
+  }
+}
