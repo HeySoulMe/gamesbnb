@@ -1,10 +1,11 @@
 <div class="container">
-    <div class="cards-dashboard">
-      <% @bookings.each do |booking| %>
+  <div class="cards-dashboard">
+    <h1>My bookings</h1>
+    <% @bookings.each do |booking| %>
         <div class="card-dashboard d-flex align-items-center">
           <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
           <div class="description-yourbooking-dashboard text-left">
-            <p class="title" id="title-your-bookings"><strong></strong><%= booking.boardgame.name %></p>
+            <p class="title" id="title-your-bookings"><strong><%= booking.boardgame.name %></strong></p>
             <p class="date-your-bookings"><%= booking.boardgame.address %></p>
             <p class="price-your-bookings"><%= booking.boardgame.price.to_i %>€ / day</p>
           </div>
@@ -14,27 +15,25 @@
             </div>
           </div>
         </div>
-      <% end %>
-  </div class="align-items-center" >
-      <h1>My boardgame: </h1>
-      <div>
-        <% @bookings_as_owner.each do |booking| %>
+    <% end %>
+
+    <h1>My bookings as owner:</h1>
+    <% @bookings_as_owner.each do |booking| %>
         <div class="card-dashboard d-flex align-items-center">
           <%= cl_image_tag booking.boardgame.photos.first.key, width: 115, height: 115, crop: :fill, radius: 24, padding: 22 %>
           <div class="description-yourbooking-dashboard text-left">
-            <p class="title" id="title-your-bookings"><strong></strong><%= booking.boardgame.name %></p>
-          </div>
-          <div class="actions-dashboard d-flex justify-content-around">
-            <div class="pending-msg text-center">
-              <button type="button" class="btn btn-success" id="validate-booking">Accept</button>
-              <button type="button" class="btn btn-danger">Decline</button>
-              </p>
-            </div>
+            <p class="title" id="title-your-bookings"><%= booking.boardgame.name %></p>
           </div>
         </div>
-      <% end %>
-    </div>
-   </div>
+    <% end %>
+  </div>
 </div>
 
 
+
+          <!-- <div class="actions-dashboard d-flex justify-content-around">
+            <div class="pending-msg text-center">
+              <button type="button" class="btn btn-success" id="validate-booking">Accept</button>
+              <button type="button" class="btn btn-danger">Decline</button>
+            </div>
+          </div> -->
