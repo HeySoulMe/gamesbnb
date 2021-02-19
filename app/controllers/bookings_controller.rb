@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   # end
 
   def create
+
     @boardgame = Boardgame.find(params[:boardgame_id])
     @booking = Booking.new(booking_params)
     @booking.boardgame = @boardgame

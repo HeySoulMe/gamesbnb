@@ -1,6 +1,6 @@
 <div class="container">
   <div>
-        <ul class="list-inline tabs-underlined">
+    <ul class="list-inline tabs-underlined m-4 pb-4 justify-content-center">
       <li>
         <a href="#" class="tab-underlined active" id="bookings-tab">My Bookings</a>
       </li>
@@ -24,7 +24,13 @@
             </div>
             <div class="actions-dashboard d-flex justify-content-around">
               <div class="pending-msg text-center">
-                <p> <%= booking.status %> </p>
+                <% if booking.status == 'accepted' %>
+                  <p><span style="color: green !important"><%= booking.status %></span></p>
+                <% elsif booking.status == 'pending' %>
+                  <p><span style="color: orange !important"><%= booking.status %></span></p>
+                <% else %>
+                  <p><span style="color: red !important"><%= booking.status %></span></p>
+                <% end %>
               </div>
             </div>
           </div>
@@ -65,7 +71,7 @@
               </div>
               <div class="actions-dashboard d-flex justify-content-around">
                 <div class="boardgame-btns text-center">
-                  <%= link_to boardgame_path(boardgame) do %>
+                  <%= link_to boardgame_path(boardgame), id: "btn-show-dashboard" do %>
                     <i class="fas fa-search"></i>
                     <p>Show</p>
                   <% end %>
