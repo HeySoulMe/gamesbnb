@@ -12,20 +12,24 @@
     <div class="m-auto flex">
       <form class="form-inline m-auto">
         <input class="form-control mr-sm-2" name="query" type="search" placeholder="Boardgame name" aria-label="Search" value="">
+        <button name="button" type="submit" class="btn btn-outline-secondary my-2 my-sm-0 ml-2">
+        <i class="fas fa-search"></i> Search
+    </button>
         <div class="nav-link">
           <%#=link_to "Start at", "#" %>
           <%#=link_to "End at","#"%>
           <%#= link_to "Category","#",  class: "btn btn-outline-secondary my-2 my-sm-0 ml-2", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          \<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%#= link_to "Enfant", "#", class: "dropdown-item" %>
             <%#= link_to "Adulte", "#", class: "dropdown-item" %>
-          </div>\
+          </div>
         </div>
       </form>
     </div>
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <%#= image_tag "https://cdn.imgbin.com/8/20/20/imgbin-samsung-galaxy-a8-a8-user-login-telephone-avatar-pawn-pvE7Qhr6Zk7kLJpGiWZ9FFRVf.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <i class="far fa-user-circle"></i>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <%= link_to "Log In", user_session_path, class: "dropdown-item" %>
           <%= link_to "My Profile", dashboard_path, class: "dropdown-item" %>
